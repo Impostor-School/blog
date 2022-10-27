@@ -1,10 +1,11 @@
-<h1 class="text-2xl font-bold leading-7 text-gray-900"><%= @article.title %></h1>
+<h1 class="text-2xl font-bold leading-7 text-gray-900 border-b-2"><%= @article.title %></h1>
 
-<p><%= @article.body %></p>
+<p class="py-5"><%= @article.body %></p>
 
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article), data: {
+<ul class="border-t border-1 flex space-x-2 py-1" >
+  <li><%= link_to "Back", articles_path, class: "hover:underline" %></li>
+  <li><%= link_to "Edit", edit_article_path(@article), class: "hover:underline" %></li>
+  <li><%= link_to "Destroy", article_path(@article), class: "hover:underline", data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
                 } %></li>

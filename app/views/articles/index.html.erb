@@ -1,10 +1,12 @@
-<h1 class="text-2xl font-bold leading-7 text-gray-900">Articles</h1>
+<h1 class="text-2xl font-bold leading-7 text-gray-900 border-b-2">Articles</h1>
 
 <ul role="list" class="divide-y divide-gray-200">
   <% @articles.each do |article| %>
-    <li class="relative bg-white py-5 px-4">
-      <%= link_to article.title, article_path(article) %>
+    <li class="relative bg-white py-5">
+      <%= link_to article.title, article_path(article), class: "hover:underline"  %>
     </li>
   <% end %>
 </ul>
-<%= link_to "New Article", new_article_path %>
+<div class="border-t border-1">
+  <%= link_to "New Article", new_article_path, class: "hover:underline" %>
+</div>

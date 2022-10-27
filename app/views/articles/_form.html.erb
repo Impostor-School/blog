@@ -1,21 +1,22 @@
-<%= form_with model: article do |form| %>
+<%= form_with model: article, class: "mt-5 space-y-4" do |form| %>
   <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :title, class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
     <% @article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
+      <div class="text-red-500"><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
+    <%= form.label :body, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_area :body, class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
     <% @article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
+      <div class="text-red-500"><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="border-t border-1 py-4">
+    <%= form.submit nil,  class: "inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+    <%= link_to "Back", articles_path, class: "hover:underline" %>
   </div>
 <% end %>
