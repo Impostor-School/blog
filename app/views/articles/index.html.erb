@@ -1,1 +1,10 @@
-<h1>Hello, Rails!</h1>
+<h1 class="text-2xl font-bold leading-7 text-gray-900">Articles</h1>
+<div>
+  <ul role="list" class="divide-y divide-gray-200">
+    <% @articles.each do |article| %>
+      <li class="relative bg-white py-5 px-4 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 hover:bg-gray-50">
+        <%= link_to article.title, article_path(article) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
